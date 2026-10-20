@@ -7885,13 +7885,13 @@ a.anchor-link {
 <li>What does each of the containers do?</li>
 </ol>
 <ul>
-<li>each of these containers allows you to use postgress, mongo, and mysql within them</li>
+<li>each of these containers allows you to use postgres, mongo, and mysql within them. Each container runs its own database server and makes it availible on my computer through a port.</li>
 </ul>
 <ol start="3">
 <li>Docker is building these containers from Docker image files that it downloads from a website. On what website are these Docker images stored? (You can provide the general name of this website, no need for the specific URLs)</li>
 </ol>
 <ul>
-<li></li>
+<li>The images are stored on Docker Hub. Because compose.yaml lists images like mysql:latest without naming a registry, Docker pulls the official images from Docker Hub by default.</li>
 </ul>
 <p>[4 points]</p>
 </div>
@@ -8985,38 +8985,12 @@ myclient.list_databases()
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">charworks</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">'works'</span><span class="p">]</span> <span class="o">=</span> <span class="n">charworks</span><span class="p">[</span><span class="s1">'works'</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">','</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>str</pre>
-</div>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">repo</span> <span class="o">=</span> <span class="s1">'https://github.com/jkropko/DS-6001/raw/master/localdata/'</span>
@@ -9188,100 +9162,6 @@ Index(['workid', 'title', 'longtitle', 'date', 'genretype', 'notes', 'source',
 (1266, 2)
 (43, 9)
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">charworks</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">'workid'</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">'workid'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
-<div>
-<style scoped="">
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-<thead>
-<tr style="text-align: right;">
-<th></th>
-<th>charid</th>
-</tr>
-<tr>
-<th>workid</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<th>winterstale</th>
-<td>34</td>
-</tr>
-<tr>
-<th>twogents</th>
-<td>17</td>
-</tr>
-<tr>
-<th>troilus</th>
-<td>30</td>
-</tr>
-<tr>
-<th>titus</th>
-<td>30</td>
-</tr>
-<tr>
-<th>timonathens</th>
-<td>57</td>
-</tr>
-<tr>
-<th>tempest</th>
-<td>21</td>
-</tr>
-<tr>
-<th>tamingshrew</th>
-<td>36</td>
-</tr>
-<tr>
-<th>romeojuliet</th>
-<td>33</td>
-</tr>
-<tr>
-<th>richard3</th>
-<td>47</td>
-</tr>
-<tr>
-<th>richard2,henry4p1,henry4p2</th>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
@@ -9546,6 +9426,54 @@ Index(['workid', 'chapterid', 'section', 'chapter', 'description'], dtype='str')
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">paragraphs</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">paragraphs</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">characters</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">characters</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Index(['workid', 'paragraphid', 'paragraphnum', 'charid', 'plaintext',
+       'phonetictext', 'stemtext', 'charcount', 'wordcount', 'chapterid'],
+      dtype='str')
+(35463, 10)
+Index(['charid', 'charname', 'abbrev', 'description', 'speechcount'], dtype='str')
+(1267, 5)
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><strong>Columns to join on: charid</strong></p>
+<p>There will be multiple paragraphs for each character, and there will be numerous characters that appear in each paragraph, so this should be many to many.</p>
+<p><code>Ref: paragraphs.charid &lt;&gt; characters.charid</code></p>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9565,7 +9493,7 @@ Index(['workid', 'chapterid', 'section', 'chapter', 'description'], dtype='str')
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pandas_df_to_dbml</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">table_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -9600,6 +9528,80 @@ Index(['workid', 'chapterid', 'section', 'chapter', 'description'], dtype='str')
         <span class="k">return</span> <span class="s2">"datetime"</span>
     <span class="k">return</span> <span class="s2">"varchar"</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[(</span><span class="s1">'works'</span><span class="p">,</span> <span class="n">works</span><span class="p">),</span> <span class="p">(</span><span class="s1">'characters'</span><span class="p">,</span> <span class="n">characters</span><span class="p">),</span> <span class="p">(</span><span class="s1">'chapters'</span><span class="p">,</span> <span class="n">chapters</span><span class="p">),</span>
+                 <span class="p">(</span><span class="s1">'paragraphs'</span><span class="p">,</span> <span class="n">paragraphs</span><span class="p">),</span> <span class="p">(</span><span class="s1">'charworks'</span><span class="p">,</span> <span class="n">charworks</span><span class="p">)]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pandas_df_to_dbml</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Table works {
+  workid varchar
+  title varchar
+  longtitle varchar
+  date int
+  genretype varchar
+  notes float
+  source varchar
+  totalwords int
+  totalparagraphs int
+}
+
+Table characters {
+  charid varchar
+  charname varchar
+  abbrev varchar
+  description varchar
+  speechcount float
+}
+
+Table chapters {
+  workid varchar
+  chapterid float
+  section float
+  chapter float
+  description varchar
+}
+
+Table paragraphs {
+  workid varchar
+  paragraphid varchar
+  paragraphnum varchar
+  charid varchar
+  plaintext varchar
+  phonetictext varchar
+  stemtext varchar
+  charcount float
+  wordcount float
+  chapterid float
+}
+
+Table charworks {
+  charid varchar
+  workid varchar
+}
+
+</pre>
 </div>
 </div>
 </div>
@@ -9659,6 +9661,64 @@ Index(['workid', 'chapterid', 'section', 'chapter', 'description'], dtype='str')
 Then when you double-click this box, you'll see three backticks before and after this text. Leave those alone
  
 Type your code here, between the backticks
+
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table works {
+  workid varchar pk
+  title varchar
+  longtitle varchar
+  date int
+  genretype varchar
+  notes float
+  source varchar
+  totalwords int
+  totalparagraphs int
+}
+
+Table characters {
+  charid varchar pk
+  charname varchar
+  abbrev varchar
+  description varchar
+  speechcount float
+}
+
+Table chapters {
+  workid varchar
+  chapterid float pk
+  section float
+  chapter float
+  description varchar
+}
+
+Table paragraphs {
+  workid varchar
+  paragraphid varchar pk
+  paragraphnum varchar
+  charid varchar
+  plaintext varchar
+  phonetictext varchar
+  stemtext varchar
+  charcount float
+  wordcount float
+  chapterid float
+}
+
+Table charworks {
+  charid varchar pk
+  workid varchar pk
+}
+
+Ref: works.workid &lt; charworks.workid
+Ref: charworks.charid - characters.charid
+Ref: works.workid &lt; paragraphs.workid
+Ref: works.workid &lt; chapters.workid
+Ref: paragraphs.workid &lt; chapters.workid 
+Ref: paragraphs.chapterid &lt; chapters.chapterid
+Ref: paragraphs.charid &lt;&gt; characters.charid
+
 </code></pre>
 </div>
 </div>
@@ -9694,6 +9754,174 @@ WHERE speechcount &gt; 200
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># create database</span>
+<span class="n">shakespeare_db</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'shakespeare.db'</span><span class="p">)</span>
+
+<span class="c1"># add tables</span>
+<span class="n">works</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'works'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">)</span>
+<span class="n">characters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'characters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">)</span>
+<span class="n">chapters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'chapters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">)</span>
+<span class="n">paragraphs</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'paragraphs'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">)</span>
+<span class="n">charworks</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'charworks'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">)</span>
+
+
+<span class="n">myquery</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">SELECT charname, description, speechcount</span>
+<span class="s1">FROM characters</span>
+<span class="s1">WHERE speechcount &gt; 200</span>
+<span class="s1">'''</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">myquery</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">shakespeare_db</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>charname</th>
+<th>description</th>
+<th>speechcount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Antony</td>
+<td>(Marcus Antonius)</td>
+<td>253.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Cleopatra</td>
+<td>queen of Egypt</td>
+<td>204.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Falstaff</td>
+<td>Sir John Falstaff</td>
+<td>471.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Duke of Gloucester</td>
+<td>brother to the King</td>
+<td>285.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Hamlet</td>
+<td>son of the former king and nephew to the prese...</td>
+<td>358.0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Henry V</td>
+<td>Prince, King of England</td>
+<td>377.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Iago</td>
+<td>Othello's ancient (?)</td>
+<td>272.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Othello</td>
+<td>A noble Moor in the service of the Ventian state</td>
+<td>274.0</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Poet</td>
+<td>the voice of Shakespeare's poetry</td>
+<td>733.0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Richard III</td>
+<td>son of Richard Plantagenet, duke of York; was ...</td>
+<td>246.0</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Rosalind</td>
+<td>daughter to the banished Duke</td>
+<td>201.0</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Timon</td>
+<td>NaN</td>
+<td>210.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">shakespeare_db</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+<span class="n">shakespeare_db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9709,6 +9937,160 @@ WHERE speechcount &gt; 200
 </code></pre>
 <p>Finally, after running the query, use the <code>.commit()</code> and <code>.close()</code> methods on the Python variable containing the database connection to save your changes and prevent further changes.</p>
 <p>[8 points]</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the password from .env without showing it</span>
+<span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">MYSQL_ROOT_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'MYSQL_ROOT_PASSWORD'</span><span class="p">)</span>
+
+<span class="c1"># Connect to the MySQL server and create the database</span>
+<span class="n">dbserver</span> <span class="o">=</span> <span class="n">mysql</span><span class="o">.</span><span class="n">connector</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">'root'</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">MYSQL_ROOT_PASSWORD</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s1">'3306'</span>
+<span class="p">)</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">dbserver</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"DROP DATABASE IF EXISTS shakespeare"</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"CREATE DATABASE shakespeare"</span><span class="p">)</span>
+
+<span class="c1"># connect to the new database through SQLAlchemy</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="sa">f</span><span class="s2">"mysql+mysqlconnector://root:</span><span class="si">{</span><span class="n">MYSQL_ROOT_PASSWORD</span><span class="si">}</span><span class="s2">@localhost:3306/shakespeare"</span><span class="p">)</span>
+
+<span class="n">works</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'works'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">characters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'characters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">chapters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'chapters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">paragraphs</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'paragraphs'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">charworks</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'charworks'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># query</span>
+<span class="n">myquery</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">SELECT charname, description, speechcount</span>
+<span class="s1">FROM characters</span>
+<span class="s1">WHERE speechcount &gt; 200</span>
+<span class="s1">'''</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">myquery</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>charname</th>
+<th>description</th>
+<th>speechcount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Antony</td>
+<td>(Marcus Antonius)</td>
+<td>253.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Cleopatra</td>
+<td>queen of Egypt</td>
+<td>204.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Falstaff</td>
+<td>Sir John Falstaff</td>
+<td>471.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Duke of Gloucester</td>
+<td>brother to the King</td>
+<td>285.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Hamlet</td>
+<td>son of the former king and nephew to the prese...</td>
+<td>358.0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Henry V</td>
+<td>Prince, King of England</td>
+<td>377.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Iago</td>
+<td>Othello's ancient (?)</td>
+<td>272.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Othello</td>
+<td>A noble Moor in the service of the Ventian state</td>
+<td>274.0</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Poet</td>
+<td>the voice of Shakespeare's poetry</td>
+<td>733.0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Richard III</td>
+<td>son of Richard Plantagenet, duke of York; was ...</td>
+<td>246.0</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Rosalind</td>
+<td>daughter to the banished Duke</td>
+<td>201.0</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Timon</td>
+<td>NaN</td>
+<td>210.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -9731,6 +10113,161 @@ WHERE speechcount &gt; 200
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load the password from .env without showing it</span>
+<span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">POSTGRES_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'POSTGRES_PASSWORD'</span><span class="p">)</span>
+
+<span class="c1"># connect to the PostgreSQL server </span>
+<span class="n">dbserver</span> <span class="o">=</span> <span class="n">psycopg</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
+    <span class="n">user</span><span class="o">=</span><span class="s1">'postgres'</span><span class="p">,</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">POSTGRES_PASSWORD</span><span class="p">,</span>
+    <span class="n">host</span><span class="o">=</span><span class="s1">'localhost'</span><span class="p">,</span>
+    <span class="n">port</span><span class="o">=</span><span class="s1">'5432'</span>
+<span class="p">)</span>
+<span class="n">dbserver</span><span class="o">.</span><span class="n">autocommit</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">cursor</span> <span class="o">=</span> <span class="n">dbserver</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"DROP DATABASE IF EXISTS shakespeare WITH (FORCE)"</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"CREATE DATABASE shakespeare"</span><span class="p">)</span>
+
+<span class="c1"># Connect to the new database through SQLAlchemy </span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="sa">f</span><span class="s2">"postgresql+psycopg://postgres:</span><span class="si">{</span><span class="n">POSTGRES_PASSWORD</span><span class="si">}</span><span class="s2">@localhost:5432/shakespeare"</span><span class="p">)</span>
+
+<span class="n">works</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'works'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">characters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'characters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">chapters</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'chapters'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">paragraphs</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'paragraphs'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">charworks</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">'charworks'</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">'replace'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+
+<span class="c1"># query</span>
+<span class="n">myquery</span> <span class="o">=</span> <span class="s1">'''</span>
+<span class="s1">SELECT charname, description, speechcount</span>
+<span class="s1">FROM characters</span>
+<span class="s1">WHERE speechcount &gt; 200</span>
+<span class="s1">'''</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">myquery</span><span class="p">,</span> <span class="n">con</span><span class="o">=</span><span class="n">engine</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>charname</th>
+<th>description</th>
+<th>speechcount</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Antony</td>
+<td>(Marcus Antonius)</td>
+<td>253.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Cleopatra</td>
+<td>queen of Egypt</td>
+<td>204.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Falstaff</td>
+<td>Sir John Falstaff</td>
+<td>471.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Duke of Gloucester</td>
+<td>brother to the King</td>
+<td>285.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Hamlet</td>
+<td>son of the former king and nephew to the prese...</td>
+<td>358.0</td>
+</tr>
+<tr>
+<th>5</th>
+<td>Henry V</td>
+<td>Prince, King of England</td>
+<td>377.0</td>
+</tr>
+<tr>
+<th>6</th>
+<td>Iago</td>
+<td>Othello's ancient (?)</td>
+<td>272.0</td>
+</tr>
+<tr>
+<th>7</th>
+<td>Othello</td>
+<td>A noble Moor in the service of the Ventian state</td>
+<td>274.0</td>
+</tr>
+<tr>
+<th>8</th>
+<td>Poet</td>
+<td>the voice of Shakespeare's poetry</td>
+<td>733.0</td>
+</tr>
+<tr>
+<th>9</th>
+<td>Richard III</td>
+<td>son of Richard Plantagenet, duke of York; was ...</td>
+<td>246.0</td>
+</tr>
+<tr>
+<th>10</th>
+<td>Rosalind</td>
+<td>daughter to the banished Duke</td>
+<td>201.0</td>
+</tr>
+<tr>
+<th>11</th>
+<td>Timon</td>
+<td>NaN</td>
+<td>210.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9747,7 +10284,7 @@ WHERE speechcount &gt; 200
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://history.muffinlabs.com/date"</span><span class="p">)</span>
@@ -9764,15 +10301,18 @@ WHERE speechcount &gt; 200
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'year': '4',
- 'text': 'Augustus adopts Tiberius.',
- 'html': '4 - &lt;a href="https://wikipedia.org/wiki/Augustus" title="Augustus"&gt;Augustus&lt;/a&gt; adopts &lt;a href="https://wikipedia.org/wiki/Tiberius" title="Tiberius"&gt;Tiberius&lt;/a&gt;.',
- 'no_year_html': '&lt;a href="https://wikipedia.org/wiki/Augustus" title="Augustus"&gt;Augustus&lt;/a&gt; adopts &lt;a href="https://wikipedia.org/wiki/Tiberius" title="Tiberius"&gt;Tiberius&lt;/a&gt;.',
- 'links': [{'title': 'Augustus',
-   'link': 'https://wikipedia.org/wiki/Augustus'},
-  {'title': 'Tiberius', 'link': 'https://wikipedia.org/wiki/Tiberius'}]}</pre>
+<pre>{'year': '1568',
+ 'text': 'The Spanish Duke of Alba defeats a Dutch rebel force under William the Silent.',
+ 'html': '1568 - The Spanish &lt;a href="https://wikipedia.org/wiki/Fernando_%C3%81lvarez_de_Toledo,_3rd_Duke_of_Alba" title="Fernando Álvarez de Toledo, 3rd Duke of Alba"&gt;Duke of Alba&lt;/a&gt; &lt;a href="https://wikipedia.org/wiki/Battle_of_Jodoigne" title="Battle of Jodoigne"&gt;defeats&lt;/a&gt; a Dutch rebel force under &lt;a href="https://wikipedia.org/wiki/William_the_Silent" title="William the Silent"&gt;William the Silent&lt;/a&gt;.',
+ 'no_year_html': 'The Spanish &lt;a href="https://wikipedia.org/wiki/Fernando_%C3%81lvarez_de_Toledo,_3rd_Duke_of_Alba" title="Fernando Álvarez de Toledo, 3rd Duke of Alba"&gt;Duke of Alba&lt;/a&gt; &lt;a href="https://wikipedia.org/wiki/Battle_of_Jodoigne" title="Battle of Jodoigne"&gt;defeats&lt;/a&gt; a Dutch rebel force under &lt;a href="https://wikipedia.org/wiki/William_the_Silent" title="William the Silent"&gt;William the Silent&lt;/a&gt;.',
+ 'links': [{'title': 'Fernando Álvarez de Toledo, 3rd Duke of Alba',
+   'link': 'https://wikipedia.org/wiki/Fernando_%C3%81lvarez_de_Toledo,_3rd_Duke_of_Alba'},
+  {'title': 'Battle of Jodoigne',
+   'link': 'https://wikipedia.org/wiki/Battle_of_Jodoigne'},
+  {'title': 'William the Silent',
+   'link': 'https://wikipedia.org/wiki/William_the_Silent'}]}</pre>
 </div>
 </div>
 </div>
@@ -9793,7 +10333,7 @@ WHERE speechcount &gt; 200
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
@@ -9807,9 +10347,9 @@ WHERE speechcount &gt; 200
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>70</pre>
+<pre>38</pre>
 </div>
 </div>
 </div>
@@ -9838,6 +10378,35 @@ WHERE speechcount &gt; 200
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load details from .env</span>
+<span class="n">dotenv</span><span class="o">.</span><span class="n">load_dotenv</span><span class="p">()</span>
+<span class="n">MONGO_INITDB_ROOT_USERNAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'MONGO_INITDB_ROOT_USERNAME'</span><span class="p">)</span>
+<span class="n">MONGO_INITDB_ROOT_PASSWORD</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">'MONGO_INITDB_ROOT_PASSWORD'</span><span class="p">)</span>
+
+<span class="c1"># Connect to server</span>
+<span class="n">myclient</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">"mongodb://</span><span class="si">{</span><span class="n">MONGO_INITDB_ROOT_USERNAME</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">MONGO_INITDB_ROOT_PASSWORD</span><span class="si">}</span><span class="s2">@localhost:27017/"</span>
+<span class="p">)</span>
+
+<span class="c1"># Create database</span>
+<span class="n">history</span> <span class="o">=</span> <span class="n">myclient</span><span class="p">[</span><span class="s1">'history'</span><span class="p">]</span>
+
+<span class="c1"># Delete todays</span>
+<span class="n">history</span><span class="p">[</span><span class="s1">'today'</span><span class="p">]</span><span class="o">.</span><span class="n">drop</span><span class="p">()</span>
+<span class="n">today</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">'today'</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9846,6 +10415,33 @@ WHERE speechcount &gt; 200
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="Part-b">Part b<a class="anchor-link" href="#Part-b">¶</a></h3><p>Insert all of the records in <code>events</code> into this collection. [4 points]</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">today</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">events</span><span class="p">)</span>
+<span class="n">today</span><span class="o">.</span><span class="n">count_documents</span><span class="p">({})</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>38</pre>
+</div>
 </div>
 </div>
 </div>
@@ -9867,6 +10463,50 @@ WHERE speechcount &gt; 200
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">"text"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"$regex"</span><span class="p">:</span> <span class="s1">'War'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># Count of matching documents</span>
+<span class="n">today</span><span class="o">.</span><span class="n">count_documents</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>9</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>I switched from England because there were no matches</p>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -9876,6 +10516,20 @@ WHERE speechcount &gt; 200
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="Problem-6">Problem 6<a class="anchor-link" href="#Problem-6">¶</a></h2><p>Once you are finished working with databases, clear up the space on your computer by going to the terminal that you used to launch the Docker containers, press CONTROL + C on your keyboard to stop the containers, then type <code>docker compose down</code> to disconnect the volumes and networks. It's a good idea to make a practice out of doing these steps when you finish working with databases.</p>
 <p>This problem isn't graded, and no need to write anything. But please do this anyway.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Container ds6001databases-mongo-1    Removed                                    0.3s
+✔ Container ds6001databases-postgres-1 Removed                                    0.3s
+✔ Container ds6001databases-mysql-1    Removed                                    1.5s
+✔ Network ds6001databases_default      Removed</p>
 </div>
 </div>
 </div>
